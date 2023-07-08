@@ -1,0 +1,82 @@
+index.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Botões Interativos</title>
+  <style>
+    body {
+      background-color: black;
+      font-family: Arial, sans-serif;
+    }
+
+    h2 {
+      color: white;
+      text-align: center;
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    #buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: blue;
+      border: none;
+      border-radius: 5px;
+      background-color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h2>prics de 100? :)</h2>
+    <div id="buttons">
+      <button class="button" id="simButton">Sim</button>
+      <button class="button" id="naoButton">Não</button>
+    </div>
+  </div>
+
+  <script>
+    const naoButton = document.getElementById("naoButton");
+
+    naoButton.addEventListener("mouseover", function() {
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      const randomX = Math.floor(Math.random() * (screenWidth - 100));
+      const randomY = Math.floor(Math.random() * (screenHeight - 100));
+
+      naoButton.style.position = "absolute";
+      naoButton.style.left = randomX + "px";
+      naoButton.style.top = randomY + "px";
+    });
+  </script>
+</body>
+</html>
